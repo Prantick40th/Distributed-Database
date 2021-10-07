@@ -1,0 +1,24 @@
+SET SERVEROUTPUT ON;
+SET VERIFY OFF;
+
+ACCEPT DIGIT NUMBER PROMPT "Enter Last 3 digits of ID = "
+
+DECLARE
+  ID NUMBER;
+  
+BEGIN
+
+  BEGIN
+    ID := &DIGIT;
+    ID := MOD (ID, 2);
+  END;
+  
+  IF ID = 0 THEN
+	DBMS_OUTPUT.PUT_LINE ('EVEN') ;
+  ELSE
+	DBMS_OUTPUT.PUT_LINE ('ODD');
+
+  END IF;
+
+END;
+/
